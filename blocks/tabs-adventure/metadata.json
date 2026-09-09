@@ -1,0 +1,18 @@
+{
+  "variantName": "tabs-adventure",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Horizontal tab switcher with a dark active-tab pill (white text) over light inactive tabs; each panel holds headings, images, paragraphs and lists.",
+  "contentPattern": "One row per tab: cell 1 = tab label, cell 2 = tab content (headings, images, paragraphs, lists).",
+  "usage": {
+    "pagesUsing": [
+      "/us/en/adventures"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-09T10:43:54.297Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "tabs-adventure"
+  ]
+}

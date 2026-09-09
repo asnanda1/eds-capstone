@@ -1,0 +1,67 @@
+/* cards-upnext — WKND magazine "up next" related-articles list.
+   Text-only vertical list: each item is a linked article title with a
+   publication date below it. Items carry a left accent rule.
+   Values extracted from .list.cmp-list--upnext on wknd.site. */
+
+.cards-upnext > ul {
+  list-style: none;
+  margin: 18px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cards-upnext > ul > li {
+  margin: 0;
+  padding: 0;
+}
+
+/* item body — carries the left accent rule that spans title + date */
+.cards-upnext .cards-upnext-card-body {
+  margin: 0;
+  padding: 8px 16px;
+  border-left: 5px solid #ebebeb;
+}
+
+/* title (first paragraph, wraps the article link) */
+.cards-upnext .cards-upnext-card-body p {
+  margin: 0;
+  padding: 5px;
+}
+
+.cards-upnext .cards-upnext-card-body a:any-link {
+  display: block;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.cards-upnext .cards-upnext-card-body a:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* publication date (second paragraph) */
+.cards-upnext .cards-upnext-card-body p + p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #696969;
+  text-transform: uppercase;
+}
+
+/* optional image support (not used by the text-only up-next list) */
+.cards-upnext .cards-upnext-card-image {
+  line-height: 0;
+  margin-bottom: 8px;
+}
+
+.cards-upnext .cards-upnext-card-image img {
+  width: 100%;
+  object-fit: cover;
+}

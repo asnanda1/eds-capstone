@@ -1,0 +1,83 @@
+/*
+ * Table Specs Block
+ * Borderless-source "spec sheet" migrated to an EDS <table>: each row is a
+ * label + value pair, stacked as an UPPERCASE muted-grey label above a bold
+ * UPPERCASE value. Typography values are extracted from the WKND source
+ * content-fragment element list (label 12px/#696969, value 14px/600/#202020).
+ * A subtle brand-grey left accent border gives the vertical EDS layout
+ * structure (the source uses a floated masonry with no rules).
+ */
+
+.table-specs {
+  width: 100%;
+}
+
+.table-specs table {
+  width: 100%;
+  max-width: 100%;
+  margin: 18px 0;
+  border-collapse: collapse;
+}
+
+/* each source element -> one table row, stacked vertically */
+.table-specs table tbody tr {
+  display: block;
+  margin-bottom: 22px;
+  padding: 4px 0 4px 16px;
+  border-left: 2px solid var(--border-color);
+}
+
+.table-specs table th,
+.table-specs table td {
+  display: block;
+  padding: 0;
+  text-align: left;
+}
+
+/* first cell = label: uppercase, muted grey (source rgb(105, 105, 105)) */
+.table-specs table tbody tr td:first-child {
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #696969;
+}
+
+/* second cell = value: uppercase, bold, dark (source rgb(32, 32, 32)) */
+.table-specs table tbody tr td:last-child {
+  padding-top: 7px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* EDS wraps each cell's text in a <p>; strip its default spacing */
+.table-specs table th p,
+.table-specs table td p {
+  margin: 0;
+}
+
+/* opt-in header variant */
+.table-specs.header table thead tr {
+  display: table-row;
+  border-left: 0;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.table-specs.header table thead th {
+  display: table-cell;
+  padding: 0.5em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* narrow left-hand spec column on desktop; full-width on mobile */
+@media (width >= 900px) {
+  .table-specs {
+    max-width: 360px;
+  }
+}

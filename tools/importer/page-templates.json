@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://wknd.site/us/en.html"
+      ],
+      "representativeUrl": "https://wknd.site/us/en.html",
+      "description": "WKND homepage — hero, teasers, article/adventure cards",
+      "urlPattern": "/us/en",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            ".carousel.cmp-carousel--hero"
+          ]
+        },
+        {
+          "name": "columns-featured",
+          "instances": [
+            ".teaser.cmp-teaser--featured"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            ".image-list.list"
+          ]
+        },
+        {
+          "name": "hero-feature",
+          "instances": [
+            ".teaser.cmp-teaser--hero.cmp-teaser--imagebottom"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "s1",
+          "name": "Hero carousel",
+          "selector": [
+            ".carousel.cmp-carousel--hero"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s2",
+          "name": "Featured article",
+          "selector": [
+            ".teaser.cmp-teaser--featured"
+          ],
+          "style": "grey",
+          "blocks": [
+            "columns-featured"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s3",
+          "name": "Recent articles",
+          "selector": [
+            ".cmp-layout-container--fixed:nth-of-type(1)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--underline",
+            ".button"
+          ]
+        },
+        {
+          "id": "s4",
+          "name": "Next adventures feature",
+          "selector": [
+            ".teaser.cmp-teaser--hero.cmp-teaser--imagebottom"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-feature"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--underline"
+          ]
+        },
+        {
+          "id": "s5",
+          "name": "Where do you want to go",
+          "selector": [
+            ".cmp-layout-container--fixed:nth-of-type(2)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".title",
+            ".button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "adventure-detail",
+      "urls": [
+        "https://wknd.site/us/en/adventures/climbing-new-zealand.html"
+      ],
+      "representativeUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand.html",
+      "description": "Adventure detail page — hero, itinerary, gallery, metadata",
+      "urlPattern": "/us/en/adventures/*",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [".carousel.cmp-carousel--mini"]
+        },
+        {
+          "name": "table-specs",
+          "instances": [".contentfragment.cmp-contentfragment--elements"]
+        },
+        {
+          "name": "tabs-adventure",
+          "instances": [".tabs.panelcontainer"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "a1",
+          "name": "Breadcrumb",
+          "selector": [".breadcrumb.cmp-breadcrumb--fixed"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".breadcrumb.cmp-breadcrumb--fixed"]
+        },
+        {
+          "id": "a2",
+          "name": "Hero carousel",
+          "selector": [".carousel.cmp-carousel--mini"],
+          "style": null,
+          "blocks": ["carousel-hero"],
+          "defaultContent": []
+        },
+        {
+          "id": "a3",
+          "name": "Page title",
+          "selector": [".title.cmp-title--underline"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".title.cmp-title--underline"]
+        },
+        {
+          "id": "a4",
+          "name": "Adventure specs sidebar",
+          "selector": [".contentfragment.cmp-contentfragment--elements"],
+          "style": null,
+          "blocks": ["table-specs"],
+          "defaultContent": []
+        },
+        {
+          "id": "a5",
+          "name": "Tabbed adventure content",
+          "selector": [".tabs.panelcontainer"],
+          "style": null,
+          "blocks": ["tabs-adventure"],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "adventures-listing",
+      "urls": [
+        "https://wknd.site/us/en/adventures.html"
+      ],
+      "representativeUrl": "https://wknd.site/us/en/adventures.html",
+      "description": "Adventures listing/index page — card grid of adventures",
+      "urlPattern": "/us/en/adventures",
+      "blocks": [
+        {
+          "name": "hero-feature",
+          "instances": [".teaser.cmp-teaser--hero"]
+        },
+        {
+          "name": "cards-article",
+          "instances": [".image-list.list"]
+        },
+        {
+          "name": "tabs-adventure",
+          "instances": [".tabs.panelcontainer"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "l1",
+          "name": "Page title",
+          "selector": ["main.cmp-layout-container--fixed:nth-of-type(1)"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".title:not(.cmp-title--underline)"]
+        },
+        {
+          "id": "l2",
+          "name": "Intro feature banner",
+          "selector": [".teaser.cmp-teaser--hero"],
+          "style": null,
+          "blocks": ["hero-feature"],
+          "defaultContent": []
+        },
+        {
+          "id": "l3",
+          "name": "Current adventures heading",
+          "selector": [".title.cmp-title--underline"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".title.cmp-title--underline"]
+        },
+        {
+          "id": "l4",
+          "name": "Filter tabs and card grid",
+          "selector": [".tabs.panelcontainer"],
+          "style": null,
+          "blocks": ["tabs-adventure", "cards-article"],
+          "defaultContent": []
+        },
+        {
+          "id": "l5",
+          "name": "Separator",
+          "selector": [".separator"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".separator"]
+        }
+      ]
+    },
+    {
+      "name": "magazine",
+      "urls": [
+        "https://wknd.site/us/en/magazine/san-diego-surf.html"
+      ],
+      "representativeUrl": "https://wknd.site/us/en/magazine/san-diego-surf.html",
+      "description": "Magazine article page — editorial rich text and imagery",
+      "urlPattern": "/us/en/magazine/*",
+      "blocks": [
+        {
+          "name": "cards-upnext",
+          "instances": [".list.cmp-list--upnext"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "m1",
+          "name": "Lead image",
+          "selector": ["div.image.aem-GridColumn:first-of-type"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": ["div.image.aem-GridColumn:first-of-type"]
+        },
+        {
+          "id": "m2",
+          "name": "Article body",
+          "selector": ["#container-fca115ba19.cmp-container"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": ["#container-fca115ba19.cmp-container"]
+        },
+        {
+          "id": "m3",
+          "name": "Author bio",
+          "selector": [".cmp-experiencefragment--justin-barr", ".experiencefragment"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".cmp-experiencefragment--justin-barr"]
+        },
+        {
+          "id": "m4",
+          "name": "Up next sidebar",
+          "selector": [".list.cmp-list--upnext"],
+          "style": null,
+          "blocks": ["cards-upnext"],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

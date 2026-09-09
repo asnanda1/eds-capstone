@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "eds-capstone": {
+      "previewOrg": "asnanda1",
+      "previewSite": "eds-capstone",
+      "contentHostUrl": "https://content.da.live/asnanda1/eds-capstone/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

@@ -1,0 +1,227 @@
+/* carousel-hero — WKND homepage full-bleed hero carousel.
+   Values extracted from wknd.site computed styles (1440px desktop / 375px mobile). */
+
+/* Full-bleed: override the section wrapper's 1200px max-width so the
+   background photo spans the viewport. The white card is re-constrained
+   to container width internally (see .carousel-hero-slide-content). */
+.carousel-hero-wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.carousel-hero {
+  position: relative;
+}
+
+.carousel-hero .carousel-hero-slides-container {
+  position: static;
+}
+
+.carousel-hero .carousel-hero-slides,
+.carousel-hero .carousel-hero-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-hero .carousel-hero-slides {
+  display: flex;
+  align-items: flex-start;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-hero .carousel-hero-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-hero .carousel-hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+  width: 100%;
+}
+
+/* --- Slide image (full-bleed background photo) --- */
+.carousel-hero .carousel-hero-slide-image {
+  aspect-ratio: 16 / 9;
+  line-height: 0;
+}
+
+.carousel-hero .carousel-hero-slide-image picture {
+  display: block;
+  height: 100%;
+}
+
+.carousel-hero .carousel-hero-slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- White content card --- */
+.carousel-hero .carousel-hero-slide-content {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding: 0 14px 8px;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.carousel-hero .carousel-hero-slide-content h2 {
+  margin: 18px 0 0;
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  color: var(--text-color);
+}
+
+.carousel-hero .carousel-hero-slide-content p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 31.5px;
+  color: var(--text-color);
+}
+
+/* CTA — styled directly on the raw link (EDS does not auto-decorate it
+   as .button inside this block). Matches the WKND yellow button. */
+.carousel-hero .carousel-hero-slide-content p:has(> a:only-child) {
+  margin: 18px 0;
+  line-height: 0;
+}
+
+.carousel-hero .carousel-hero-slide-content a {
+  display: inline-block;
+  padding: 14px 35px;
+  background-color: var(--brand-accent);
+  color: var(--text-color);
+  border-radius: 0;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.carousel-hero .carousel-hero-slide-content a:hover,
+.carousel-hero .carousel-hero-slide-content a:focus-visible {
+  background-color: var(--brand-accent-hover);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* --- Dot indicators (centered below the photo) --- */
+.carousel-hero .carousel-hero-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  padding: 0;
+  margin: 12px 0 0;
+  line-height: 0;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgb(175 175 175);
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:disabled,
+.carousel-hero .carousel-hero-slide-indicator button:hover,
+.carousel-hero .carousel-hero-slide-indicator button:focus-visible {
+  background-color: rgb(0 0 0 / 80%);
+}
+
+/* --- Prev / next arrows (bottom-right, black chevrons) --- */
+.carousel-hero .carousel-hero-navigation-buttons {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-navigation-buttons button {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button:hover,
+.carousel-hero .carousel-hero-navigation-buttons button:focus-visible {
+  opacity: 0.6;
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid currentcolor;
+  border-bottom: 0;
+  border-left: 0;
+  height: 11px;
+  width: 11px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Desktop: full-bleed photo with the card overlapping its bottom edge */
+
+/* ------------------------------------------------------------------ */
+@media (width >= 900px) {
+  .carousel-hero .carousel-hero-slide-image {
+    aspect-ratio: auto;
+    height: 640px;
+  }
+
+  .carousel-hero .carousel-hero-slide-content {
+    max-width: 1200px;
+    margin: -180px auto 0;
+    padding: 0 28px 18px;
+  }
+
+  .carousel-hero .carousel-hero-navigation-buttons {
+    bottom: 20px;
+    right: 24px;
+  }
+
+  .carousel-hero .carousel-hero-slide-indicators {
+    margin-top: 9px;
+  }
+}

@@ -1,0 +1,86 @@
+/* cards-article — WKND homepage article/adventure grid.
+   Values extracted from source .image-list.list computed styles.
+   Decorated DOM: .cards-article > ul > li
+     > div.cards-article-card-image > picture > img
+     > div.cards-article-card-body
+         > a.cards-article-card-title
+         > span.cards-article-card-description */
+
+.cards-article > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  /* row-gap column-gap — source: 32px between rows, 14px gutter between cards */
+  gap: 32px 14px;
+}
+
+.cards-article > ul > li {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* prevent large images from blowing out grid tracks */
+}
+
+/* image — source render 260x200 => aspect 13/10 (1.30), object-fit cover */
+.cards-article .cards-article-card-image {
+  line-height: 0;
+}
+
+.cards-article > ul > li img {
+  width: 100%;
+  aspect-ratio: 13 / 10;
+  object-fit: cover;
+}
+
+.cards-article .cards-article-card-body {
+  margin: 0;
+}
+
+/* title link — dark (not the global blue), bold, uppercase */
+.cards-article a.cards-article-card-title:any-link {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.cards-article a.cards-article-card-title:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* description — single line, ellipsis-truncated, grey uppercase (source) */
+.cards-article .cards-article-card-description {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: rgb(105 105 105);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* tablet — 2 columns */
+@media (width >= 600px) {
+  .cards-article > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop — 4 columns */
+@media (width >= 900px) {
+  .cards-article > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

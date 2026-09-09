@@ -1,0 +1,18 @@
+{
+  "variantName": "hero-feature",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Full-bleed mid-page feature banner. A background photo fills the block edge-to-edge; a white text card (heading + description + CTA) is anchored bottom-left, overlapping the image.",
+  "contentPattern": "Two rows: row 1 = background image; row 2 = content (heading + description + CTA link).",
+  "usage": {
+    "pagesUsing": [
+      "/us/en/adventures"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-09T10:43:54.276Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "hero-feature"
+  ]
+}

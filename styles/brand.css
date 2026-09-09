@@ -1,0 +1,26 @@
+/*
+ * brand.css — WKND design tokens (extracted from wknd.site)
+ * Imported first by styles.css so these values seed the global design system.
+ */
+
+:root {
+  /* fonts */
+  --heading-font-family: "Asar", "Georgia", "Times New Roman", "Times", serif;
+  --body-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  /* colors */
+  --background-color: #fff;
+  --text-color: #202020;
+  --link-color: #0045ff;
+  --link-hover-color: #0035cc;
+
+  /* brand palette */
+  --brand-accent: #ffea00;          /* WKND yellow */
+  --brand-accent-hover: #f2d600;
+  --light-color: #f5f5f5;           /* featured / grey band */
+  --dark-color: #202020;
+  --border-color: #dadada;
+
+  /* spacing */
+  --nav-height: 116px;
+}

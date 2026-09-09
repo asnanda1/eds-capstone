@@ -143,6 +143,39 @@ function decorateButtons(main) {
 }
 
 /**
+ * Applies `Section Metadata` blocks to their parent section as classes / data
+ * attributes, then removes the block. The vendored aem.js `decorateSections`
+ * in this scaffold does not do this, so we handle it here before sections are
+ * decorated. Mirrors the standard EDS behaviour (e.g. `style: grey` → the
+ * section gets the `grey` class).
+ * @param {Element} main The main element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll(':scope > div > div.section-metadata').forEach((metaBlock) => {
+    const section = metaBlock.parentElement;
+    const meta = {};
+    metaBlock.querySelectorAll(':scope > div').forEach((row) => {
+      const cols = [...row.children];
+      if (cols[1]) {
+        const key = cols[0].textContent.trim().toLowerCase();
+        const value = cols[1].textContent.trim();
+        meta[key] = value;
+      }
+    });
+    if (meta.style) {
+      meta.style.split(',').forEach((s) => {
+        const cls = s.trim().toLowerCase().replace(/\s+/g, '-');
+        if (cls) section.classList.add(cls);
+      });
+    }
+    Object.keys(meta).forEach((key) => {
+      if (key !== 'style') section.dataset[key] = meta[key];
+    });
+    metaBlock.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -150,6 +183,7 @@ function decorateButtons(main) {
 export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
+  decorateSectionMetadata(main);
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);
