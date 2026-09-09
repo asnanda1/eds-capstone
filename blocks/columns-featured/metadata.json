@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-featured",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Featured-article card on a light grey band. Two columns: image on the left, text block on the right (eyebrow/heading/description/CTA). Stacks image-over-text on mobile.",
+  "contentPattern": "Single row, two cells: cell 1 = image, cell 2 = text (eyebrow + heading + description + CTA link).",
+  "usage": "Homepage 'Featured Article' section.",
+  "options": [],
+  "memberVariantIds": ["columns-featured"]
+}

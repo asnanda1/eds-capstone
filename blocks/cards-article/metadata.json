@@ -1,0 +1,18 @@
+{
+  "variantName": "cards-article",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Borderless 4-up card grid. Each card is image-top (3:2), a bold uppercase linked title, and a short description below. Responsive: 1 column mobile, 2 tablet, 4 desktop.",
+  "contentPattern": "One row per card: cell 1 = image, cell 2 = body (title link + description).",
+  "usage": {
+    "pagesUsing": [
+      "/us/en/adventures"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-09T10:43:54.254Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-article"
+  ]
+}

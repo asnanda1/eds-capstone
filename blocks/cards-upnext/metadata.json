@@ -1,0 +1,10 @@
+{
+  "variantName": "cards-upnext",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Text-only vertical 'up next' related-articles list. Each item is a bold linked title with a publication date below, separated by thin divider rules. No images, stacked (not a grid).",
+  "contentPattern": "One row per item: cell = body (title link + date). Image cell optional/absent.",
+  "usage": "Magazine article sidebar — 'up next' related articles.",
+  "options": [],
+  "memberVariantIds": ["cards-upnext"]
+}

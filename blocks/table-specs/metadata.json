@@ -1,0 +1,10 @@
+{
+  "variantName": "table-specs",
+  "baseBlock": "table",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Borderless key/value 'spec sheet'. Each row is a label/value pair: uppercase muted label above a bold value, with a light grey left accent border. No header row by default.",
+  "contentPattern": "One row per spec: cell 1 = label (e.g. 'Activity'), cell 2 = value (e.g. 'Rock Climbing').",
+  "usage": "Adventure detail page — metadata sidebar (Activity, Adventure Type, Trip Length, Group Size, Difficulty, Price).",
+  "options": ["header"],
+  "memberVariantIds": ["table-specs"]
+}

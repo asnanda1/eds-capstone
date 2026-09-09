@@ -1,0 +1,13 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Full-bleed rotating hero carousel. Each slide is an edge-to-edge background photo with an overlaid text card (eyebrow/heading/description) anchored bottom-left, a CTA button, centered dot indicators, and prev/next navigation arrows.",
+  "contentPattern": "One row per slide: cell 1 = slide image, cell 2 = content (heading + description + CTA link).",
+  "usage": "Homepage hero (3 slides). Adventure detail hero image carousel (3 slides, images only, no overlaid text).",
+  "pagesUsing": ["/us/en", "/us/en/adventures/climbing-new-zealand"],
+  "reuseCount": 1,
+  "lastUsed": "2026-09-09",
+  "options": [],
+  "memberVariantIds": ["carousel-hero"]
+}

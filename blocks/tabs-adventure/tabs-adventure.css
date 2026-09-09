@@ -1,0 +1,121 @@
+/* tabs-adventure — WKND adventure tabbed content switcher.
+   Values extracted from computed styles on
+   https://wknd.site/us/en/adventures/climbing-new-zealand.html
+   (desktop, 1280px). Kept general so the same block can be reused as a
+   filter bar with nested card grids on the adventures listing page. */
+
+/* --- Tab row (tablist) --- */
+.tabs-adventure .tabs-adventure-list {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0;
+  margin: 18px 0;
+  padding: 0;
+
+  /* tabs scroll horizontally on mobile if they overflow */
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs-adventure .tabs-adventure-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Tab buttons --- */
+.tabs-adventure .tabs-adventure-list button.tabs-adventure-tab {
+  flex: 0 0 auto;
+  min-width: 48px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tabs-adventure .tabs-adventure-list button.tabs-adventure-tab p {
+  margin: 0;
+}
+
+/* inactive hover cue */
+.tabs-adventure .tabs-adventure-list button.tabs-adventure-tab:hover {
+  background-color: rgb(32 32 32 / 8%);
+}
+
+/* active tab: dark pill/button with white text */
+.tabs-adventure .tabs-adventure-list button.tabs-adventure-tab[aria-selected='true'] {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  cursor: default;
+}
+
+.tabs-adventure .tabs-adventure-list button.tabs-adventure-tab[aria-selected='true']:hover {
+  background-color: var(--dark-color);
+}
+
+/* --- Tab panels --- */
+.tabs-adventure .tabs-adventure-panel {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-adventure .tabs-adventure-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* --- Panel typography (adventure detail content) --- */
+.tabs-adventure .tabs-adventure-panel h2 {
+  margin: 27px 0 13.5px;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  color: var(--text-color);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-adventure .tabs-adventure-panel p {
+  margin: 0 0 13.5px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 45px;
+  color: var(--text-color);
+}
+
+.tabs-adventure .tabs-adventure-panel ul {
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.tabs-adventure .tabs-adventure-panel ul li {
+  margin: 0;
+  padding: 0 0 0 12px;
+  line-height: 36px;
+}
+
+/* Images fill the panel width (EDS wraps bare <img> in <p>) */
+/* stylelint-disable no-descending-specificity */
+.tabs-adventure .tabs-adventure-panel p:has(> picture),
+.tabs-adventure .tabs-adventure-panel p:has(> img) {
+  margin: 7px 0;
+  line-height: 0;
+}
+/* stylelint-enable no-descending-specificity */
+
+.tabs-adventure .tabs-adventure-panel picture,
+.tabs-adventure .tabs-adventure-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
