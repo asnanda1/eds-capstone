@@ -137,6 +137,22 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // wire the search icon in nav-tools to the search results page
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const searchIcon = navTools.querySelector('.icon-search');
+    if (searchIcon) {
+      const trigger = searchIcon.closest('p') || searchIcon;
+      trigger.classList.add('nav-search');
+      const link = document.createElement('a');
+      link.href = '/us/en/search';
+      link.setAttribute('aria-label', 'Search');
+      link.append(searchIcon);
+      trigger.textContent = '';
+      trigger.append(link);
+    }
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
