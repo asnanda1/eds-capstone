@@ -269,4 +269,25 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header nav .nav-tools p {
+  font-size: var(--body-font-size-xs);
+}
+
+header nav .nav-tools a:any-link {
+  text-decoration: none;
+}
+
+header nav .nav-tools a:hover {
+  text-decoration: underline;
+}
+
+header nav .nav-tools .nav-search .icon-search {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
