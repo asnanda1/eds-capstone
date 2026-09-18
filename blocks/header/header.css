@@ -269,8 +269,11 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
-  display: flex;
   flex: 0 0 auto;
+}
+
+header nav .nav-tools .default-content-wrapper {
+  display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 16px;
