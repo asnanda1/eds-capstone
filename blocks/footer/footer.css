@@ -67,7 +67,7 @@ footer .footer ul a {
   letter-spacing: 0.04em;
 }
 
-/* social icon buttons (0,3,1) */
+/* social icon buttons — show only the first letter in a circle (0,3,1) */
 footer .footer h4 + p a {
   display: inline-flex;
   align-items: center;
@@ -76,12 +76,16 @@ footer .footer h4 + p a {
   height: 40px;
   border: 1px solid rgb(255 255 255 / 40%);
   border-radius: 50%;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
+  color: transparent;
+  font-size: 0;
   text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
+  position: relative;
+}
+
+footer .footer h4 + p a::first-letter {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 /* legal links inside muted paragraphs (0,4,1) */
