@@ -137,19 +137,58 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  // wire the search icon in nav-tools to the search results page
+  // build the top utility strip (Sign In + language) and the search box
   const navTools = nav.querySelector('.nav-tools');
+  const utility = document.createElement('div');
+  utility.className = 'nav-utility';
+  const utilityInner = document.createElement('div');
+  utilityInner.className = 'nav-utility-inner';
+  utility.append(utilityInner);
+
   if (navTools) {
+    // move the Sign In + language links up into the utility strip
+    navTools.querySelectorAll('a').forEach((a) => {
+      const href = a.getAttribute('href') || '';
+      if (href.includes('sign-in')) {
+        a.classList.add('nav-signin');
+        utilityInner.append(a);
+      } else if (href.includes('langNavToggle')) {
+        a.classList.add('nav-lang');
+        utilityInner.append(a);
+      }
+    });
+    // remove now-empty paragraphs left behind
+    navTools.querySelectorAll('p').forEach((p) => {
+      if (!p.textContent.trim() && !p.querySelector('.icon-search')) p.remove();
+    });
+
+    // turn the search icon into a search box that submits to the results page
     const searchIcon = navTools.querySelector('.icon-search');
     if (searchIcon) {
       const trigger = searchIcon.closest('p') || searchIcon;
       trigger.classList.add('nav-search');
-      const link = document.createElement('a');
-      link.href = '/us/en/search';
-      link.setAttribute('aria-label', 'Search');
-      link.append(searchIcon);
+      const form = document.createElement('form');
+      form.className = 'nav-search-form';
+      form.setAttribute('role', 'search');
+      form.action = '/us/en/search';
+      form.method = 'get';
+      const label = document.createElement('label');
+      label.className = 'nav-search-icon';
+      label.setAttribute('aria-hidden', 'true');
+      label.append(searchIcon);
+      const input = document.createElement('input');
+      input.type = 'search';
+      input.name = 'q';
+      input.placeholder = 'Search';
+      input.setAttribute('aria-label', 'Search');
+      form.append(label, input);
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const q = input.value.trim();
+        window.location.href = q ? `/us/en/search?q=${encodeURIComponent(q)}` : '/us/en/search';
+      });
       trigger.textContent = '';
-      trigger.append(link);
+      trigger.append(form);
     }
   }
 
@@ -182,6 +221,8 @@ export default async function decorate(block) {
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+  // utility strip sits above the main nav row
+  if (utilityInner.childElementCount) navWrapper.append(utility);
   navWrapper.append(nav);
   block.append(navWrapper);
 }
