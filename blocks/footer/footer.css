@@ -1,13 +1,13 @@
 footer {
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
+  color: #fff;
   font-size: var(--body-font-size-xs);
-  color: var(--text-color);
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 48px 24px 32px;
+  padding: 56px 24px 40px;
 }
 
 footer .footer p {
@@ -26,71 +26,97 @@ footer .footer ul {
 
 /* Follow Us heading */
 footer .footer h4 {
-  margin: 24px 0 12px;
+  margin: 32px 0 16px;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  color: #fff;
 }
 
 /* social row */
 footer .footer h4 + p {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 24px;
 }
 
-/* copyright + legal text */
+/* copyright + legal text — muted */
 footer .footer h4 ~ p {
-  max-width: 900px;
+  max-width: 920px;
   line-height: 1.6;
-  color: var(--dark-color);
+  font-size: 12px;
+  color: rgb(255 255 255 / 65%);
 }
 
 footer .footer h4 + p + p {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgb(255 255 255 / 15%);
   margin-top: 16px;
   padding-top: 24px;
-  font-weight: 700;
-  color: var(--text-color);
 }
 
 /* --- link styling, ordered by ascending specificity --- */
 
-/* nav + social links (0,3,1) */
-footer .footer ul a,
-footer .footer h4 + p a {
-  color: var(--text-color);
+/* nav links (0,3,1) */
+footer .footer ul a {
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
+/* social icon buttons — show only the first letter in a circle (0,3,1) */
 footer .footer h4 + p a {
-  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 50%;
+  color: transparent;
+  font-size: 0;
+  text-decoration: none;
+  position: relative;
 }
 
-/* WKND brand wordmark (0,3,1 — same specificity, ordered before hovers) */
+footer .footer h4 + p a::first-letter {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* legal links inside muted paragraphs (0,4,1) */
+footer .footer h4 ~ p a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* WKND brand wordmark */
 footer .footer p:first-child a {
   font-family: var(--body-font-family);
   font-size: 32px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--text-color);
+  color: #fff;
   text-decoration: none;
   text-transform: none;
 }
 
 /* hover states (0,4,1) */
-footer .footer ul a:hover,
-footer .footer h4 + p a:hover {
+footer .footer ul a:hover {
   text-decoration: underline;
+}
+
+footer .footer h4 + p a:hover {
+  border-color: #fff;
+  background-color: rgb(255 255 255 / 12%);
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 48px 32px 32px;
+    padding: 56px 32px 40px;
   }
 }
