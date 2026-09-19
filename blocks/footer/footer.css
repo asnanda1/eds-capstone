@@ -14,13 +14,14 @@ footer .footer p {
   margin: 0 0 12px;
 }
 
-/* primary nav links — clean row, no bullets */
+/* primary nav links — right-aligned row on the top line */
 footer .footer ul {
   list-style: none;
-  margin: 24px 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 12px 32px;
 }
 
@@ -121,6 +122,30 @@ footer .footer ul a:hover {
 
 footer .footer a.footer-social:hover {
   background-color: #fff;
+}
+
+/* ---- footer layout: top row = brand left + nav right, rest full width ---- */
+
+/* content sits inside .default-content-wrapper; make that the flex container */
+footer .footer .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 32px;
+}
+
+footer .footer .default-content-wrapper > p:first-child {
+  flex: 0 0 auto;
+}
+
+footer .footer .default-content-wrapper > ul {
+  flex: 1 1 auto;
+}
+
+footer .footer .default-content-wrapper > h4,
+footer .footer .default-content-wrapper > .metadata,
+footer .footer .default-content-wrapper > p:not(:first-child) {
+  flex-basis: 100%;
 }
 
 @media (width >= 900px) {
