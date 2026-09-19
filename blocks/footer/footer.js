@@ -16,5 +16,16 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // tag social links so CSS can render brand icons
+  const NETWORKS = ['facebook', 'twitter', 'instagram'];
+  footer.querySelectorAll('a').forEach((a) => {
+    const hint = `${a.getAttribute('href') || ''} ${a.textContent}`.toLowerCase();
+    const network = NETWORKS.find((n) => hint.includes(n));
+    if (network) {
+      a.classList.add('footer-social', `footer-social-${network}`);
+      a.setAttribute('aria-label', network.charAt(0).toUpperCase() + network.slice(1));
+    }
+  });
+
   block.append(footer);
 }
