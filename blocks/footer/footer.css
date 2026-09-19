@@ -106,9 +106,11 @@ footer .footer h4 ~ p a {
 
 /* WKND brand wordmark */
 footer .footer p:first-child a {
+  display: inline-block;
   font-family: var(--body-font-family);
   font-size: 32px;
   font-weight: 700;
+  line-height: 1;
   letter-spacing: 0.02em;
   color: #fff;
   text-decoration: none;
@@ -136,10 +138,12 @@ footer .footer .default-content-wrapper {
 
 footer .footer .default-content-wrapper > p:first-child {
   flex: 0 0 auto;
+  margin: 0;
 }
 
 footer .footer .default-content-wrapper > ul {
   flex: 1 1 auto;
+  margin: 0;
 }
 
 footer .footer .default-content-wrapper > h4,
