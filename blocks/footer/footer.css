@@ -7,11 +7,11 @@ footer {
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 56px 24px 40px;
+  padding: 32px 24px 24px;
 }
 
 footer .footer p {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
 }
 
 /* primary nav links — right-aligned row on the top line */
@@ -27,7 +27,7 @@ footer .footer ul {
 
 /* Follow Us heading */
 footer .footer h4 {
-  margin: 32px 0 16px;
+  margin: 20px 0 12px;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
   font-weight: 700;
@@ -39,8 +39,8 @@ footer .footer h4 {
 /* social row */
 footer .footer h4 + p {
   display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 /* copyright + legal text — muted */
@@ -53,8 +53,8 @@ footer .footer h4 ~ p {
 
 footer .footer h4 + p + p {
   border-top: 1px solid rgb(255 255 255 / 15%);
-  margin-top: 16px;
-  padding-top: 24px;
+  margin-top: 8px;
+  padding-top: 16px;
 }
 
 /* --- link styling, ordered by ascending specificity --- */
@@ -73,13 +73,13 @@ footer .footer a.footer-social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 0;
   background-color: #ebebeb;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 20px 20px;
+  background-size: 18px 18px;
   color: transparent;
   font-size: 0;
   text-decoration: none;
@@ -150,6 +150,6 @@ footer .footer .default-content-wrapper > p:not(:first-child) {
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 56px 32px 40px;
+    padding: 32px 32px 24px;
   }
 }
